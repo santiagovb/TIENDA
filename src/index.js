@@ -1,23 +1,31 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+import BarraDeMenu from './components/BarraDeMenu'
+import Card from './components/Card'
+import database from './database/database.json'
 
 
-const Elemen_Menubar=(     
-    <div>            
-        <ul>
-            <li><a href="default.asp">Inicio</a></li>
-            <li><a href="news.asp">Productos</a></li>
-            <li><a href="contact.asp">Mi carrito</a></li>
-        </ul> 
-        <h1>Bienvenido a la tienda de camisas </h1> 
-    </div>
-)
+const contenedorBarrademenu=document.getElementById('Barrademenu')
+const contenedorCard=document.getElementById('Card')
 
-//obtener contenedores
-const cont_barraMenu=document.getElementById('barraMenu')
+const {nombre,descripcion,imagen,unidadesDisponibles,precio}=database.data[0]//Card PROPS
 
-//desplegar contenedores
+ReactDOM.render(<BarraDeMenu
 
-ReactDOM.render(Elemen_Menubar,cont_barraMenu)
+/>,contenedorBarrademenu)
+
+ReactDOM.render(<Card 
+    /* PROPS-propiedades de la tarjeta, estas seran dinamicas */  
+        nombre={nombre}
+        descripcion={descripcion}
+        imagen={imagen}
+        unidadesDisponibles={unidadesDisponibles}
+        precio={precio}
+        
+/>,contenedorCard)
+
+
+
+
 
 

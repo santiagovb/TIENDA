@@ -1,0 +1,11 @@
+{
+	"data": [
+        {
+		"nombre": "Paz y Zen",
+		"descripcion": "El brillante silmaril",
+		"imagen": "/static/media/osito.3828b915.png",
+		"unidadesDisponibles": 15,
+		"precio": 25000
+    }
+]
+}
