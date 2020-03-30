@@ -2,13 +2,13 @@ import React from 'react'
 import { Component } from "react";
 // eslint-disable-next-line no-unused-vars
 import estilos from './estilos/Card.css'
-import BtnAgregarAlCarrito from './BtnAgregarAlCarrito'
+import BtnAgregarAlCarrito from '../components/BtnAgregarAlCarrito'
 
 class Card extends Component{    
   
   render(){
         const {nombre,descripcion,imagen,unidadesDisponibles,precio}=this.props
-        return(        
+        return(    
           <div className="row">
               <div className="column">
                 <div className="card">
