@@ -1,7 +1,10 @@
 table {
     font-family: arial, sans-serif;
     border-collapse: collapse;
-    width: 100%;
+    width: 50%;
+    margin-bottom: 0.7em; 
+    margin-left: 0.7 em;
+    margin-left: 0.7em;
   }
   
   td, th {
@@ -9,3 +12,11 @@ table {
     text-align: left;
     padding: 8px;
   }
+  th {
+    background-color: #dddddd;
+  }
+  .img{
+    max-width:4em;
+    max-height:4em;
+  }
+ 

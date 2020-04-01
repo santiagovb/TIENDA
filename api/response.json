@@ -1,0 +1,13 @@
+[{"id":11,"nombre":"cam","area":"arq.empresarial"}]
+
+curl -X GET \
+  'http://127.0.0.1:3006/users/11?=' \
+  -H 'Accept: */*' \
+  -H 'Accept-Encoding: gzip, deflate' \
+  -H 'Cache-Control: no-cache' \
+  -H 'Connection: keep-alive' \
+  -H 'Content-Type: application/x-www-form-urlencoded' \
+  -H 'Host: 127.0.0.1:3006' \
+  -H 'Postman-Token: 76873857-f0a9-48cf-93a8-ec1df3b11e9b,ce63b84a-11d1-4334-9409-9f341d1d3ea2' \
+  -H 'User-Agent: PostmanRuntime/7.20.1' \
+  -H 'cache-control: no-cache'

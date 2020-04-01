@@ -14,7 +14,7 @@ function ListadeProductos(props){
                         nombre={producto.nombre}
                         descripcion={producto.descripcion}
                         imagen={producto.imagen}
-                        unidadesDisponibles={producto.unidadesDisponibles}
+                        unidadesDisponibles={producto.unidades_disponibles}
                         precio={producto.precio}
                     />
                     )

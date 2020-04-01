@@ -1,29 +1,52 @@
 import React from 'react'
 import { Component } from "react";
 // eslint-disable-next-line no-unused-vars
-import estilos from './estilos/Card.css'
-import BtnAgregarAlCarrito from '../components/BtnAgregarAlCarrito'
+import estilos from './estilos/CardAdmin.css'
+import BtnEditar from '../components/BtnEditar'
+import BtnEliminar from '../components/BtnEliminar'
 
-class Card extends Component{    
+
+class CardAdmin extends Component{    
   
   render(){
-        const {nombre,descripcion,imagen,unidadesDisponibles,precio}=this.props
+        const {id,nombre,descripcion,imagen,unidades_disponibles,precio}=this.props
         return(    
-          <div className="row">
-              <div className="column">
-                <div className="card">
-                  <h3>{nombre}</h3>{/* nombre */}
-                  <p>{descripcion}</p>{/* descripción */}
-                  <img className="tamañoimagen" src={imagen} alt="Imagen no encontrada"/>{/* imagen */}
-                  <h3>Unidades disponibles: {unidadesDisponibles}</h3>{/* esto sera dinamico */}
-                  <h3 className="price">$ {precio}</h3>{/* precio */}               
-                 <BtnAgregarAlCarrito/>
-                </div>
-              </div>    
+          <div>
+            <table>
+                  <tr>
+                    <th>Imagen</th>
+                    <th>Nombre</th>
+                    <th>Descripcion</th>
+                    <th>Unidades Disponibles</th>
+                    <th>Precio</th> 
+                    <th>Editar producto</th>
+                    <th>Elimininar producto</th>
+                  </tr>  
+                  <tr>
+                    <td><a target="_blank" rel="noopener noreferrer" href={imagen} ><img  className="img" src={imagen} alt=""/></a></td>
+                    <td>{nombre}</td>
+                    <td>{descripcion}</td>                  
+                    <td>{unidades_disponibles}</td>
+                    <td>{precio}</td>
+                    <td>{<BtnEditar
+                        id={id}
+                        nombre={nombre}
+                        descripcion={descripcion}
+                        imagen={imagen}
+                        unidades_disponibles={unidades_disponibles}
+                        precio={precio}
+                    />}
+                    </td>
+                    <td>{<BtnEliminar
+                         id={id} 
+                    />}
+                    </td>
+                  </tr>              
+             </table>            
           </div>             
         )
     }
 }
-export default Card
+export default CardAdmin
 
 
