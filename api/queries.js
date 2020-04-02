@@ -42,6 +42,7 @@ const getProducts = (request, response) => {
 //crear un nuevo
 const createProduct = (request, response) => {
     const { nombre, descripcion,unidades_disponibles,precio,imagen } = request.body
+    console.log(request.body)
   
     pool.query('INSERT INTO producto (nombre, descripcion,unidades_disponibles, precio, imagen) VALUES ($1, $2, $3, $4, $5 )', [nombre, descripcion,unidades_disponibles,precio,imagen], (error, results) => {
       if (error) {
