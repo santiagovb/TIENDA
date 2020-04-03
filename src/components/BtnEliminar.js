@@ -30,7 +30,7 @@ class BtnEliminar extends Component{
         });
       };
     
-/*     ndleClick = () => { 
+/*     handleClick = () => { 
         axios.delete(`http://localhost:3006/productos/${this.props.id}`)
         .then((res)=>alert(res.data))
         .catch(error=>alert(error)) 

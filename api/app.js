@@ -16,8 +16,7 @@ app.get('/', (request, response) => {
     response.json({ info: 'Node.js, Express, and Postgres API' })
   })
 app.listen(port, () => {
-    console.log(`Api running on port ${port}`
-    
+    console.log(`Api running on port ${port}`    
     )
   })
 
