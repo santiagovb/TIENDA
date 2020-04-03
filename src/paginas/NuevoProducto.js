@@ -3,8 +3,6 @@ import React from "react";
 import estilos from '../components/estilos/NuevoProducto.css'
 import axios from 'axios'
 
-
-
 class NuevoProducto extends React.Component {
     state = {}
     handleChange = (e) => {
@@ -28,13 +26,10 @@ class NuevoProducto extends React.Component {
             
         } */ 
         axios.post('http://localhost:3006/productos',this.state)
-        .then((resultado)=>alert(( resultado.data)))
-        .catch((error)=>{
-            alert((error.data))
-        }
+        .then(resultado=>alert(resultado.data))
+        .catch(error=>alert((error.data))
     )
  }
-
     render() {
         return (
             <div>

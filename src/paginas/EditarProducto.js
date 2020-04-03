@@ -1,27 +1,31 @@
 import React from "react";
 // eslint-disable-next-line no-unused-vars
 import estilos from '../components/estilos/EditarProducto.css'
+import axios from 'axios'
 
 class EditarProducto extends React.Component {
     constructor(props) {
         super(props)
         this.state = props.location.estado
     }
-
-
     handleChange = (e) => {
 
         this.setState(
 
             {
                 [e.target.name]: e.target.value
+        
             }
         )
-
+        
     }
+
     handleSubmit = (e) => {
         e.preventDefault()
-        fetch('http://localhost:3006/productos/')
+        axios.put(`http://localhost:3006/productos/${this.state.id}`,this.state)
+        .then(res=>alert(res.data))
+        .catch(error=>alert(error))
+        
     }
     render() {
         return (

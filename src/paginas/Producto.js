@@ -3,14 +3,13 @@ import ListadeProductos from '../components/ListadeProductos'
 import BtnIrATienda from '../components/BtnIrATienda'
 import BtnCarrito from '../components/BtnCarrito'
 import BtnNuevoProducto from '../components/BtnAdministrarProductos'
-
  
 class Producto extends Component{
  state={
      database:[]
  }
 
-/* //esto funciona asi funciona
+/* //funciona para importar un archivo json y hacer pruebas
 constructor(props){
     super(props)
     this.state={ //inicial
