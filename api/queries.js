@@ -9,7 +9,7 @@ const pool = new Pool({
 })
 
  //--------------------------------------------------
-//Obtener todos los usuarios
+//Obtener todos los productos
 
 const getProducts = (request, response) => {
     pool.query('SELECT * FROM producto', (error, results) => {
@@ -19,9 +19,10 @@ const getProducts = (request, response) => {
       response.status(200).json(results.rows)     
     })
   }
+
   
  //--------------------------------------------------
- //obtener un solo usuario
+ //obtener un solo productos
 
   const getProductById = (request, response) => {
     const id = parseInt(request.params.id)
@@ -39,7 +40,7 @@ const getProducts = (request, response) => {
   
 
 //----------------------------------------------------------------------
-//crear un nuevo
+//crear un nuevo producto
 const createProduct = (request, response) => {
     const { nombre, descripcion,unidades_disponibles,precio,imagen } = request.body
     console.log(request.body)

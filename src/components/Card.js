@@ -7,7 +7,7 @@ import BtnAgregarAlCarrito from './BtnAgregarAlCarrito'
 class Card extends Component{    
   
   render(){
-        const {nombre,descripcion,imagen,unidadesDisponibles,precio}=this.props
+        const {id,nombre,descripcion,imagen,unidadesDisponibles,precio,onChange}=this.props
         return(        
           <div className="row">
               <div className="column">
@@ -17,7 +17,10 @@ class Card extends Component{
                   <img className="tamañoimagen" src={imagen} alt="Imagen no encontrada"/>{/* imagen */}
                   <h3>Unidades disponibles: {unidadesDisponibles}</h3>{/* esto sera dinamico */}
                   <h3 className="price">$ {precio}</h3>{/* precio */}               
-                 <BtnAgregarAlCarrito/>
+                 <BtnAgregarAlCarrito
+                    id={id}
+                    onChange={onChange}
+                 /> 
                 </div>
               </div>    
           </div>             

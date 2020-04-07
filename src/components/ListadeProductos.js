@@ -10,12 +10,14 @@ function ListadeProductos(props){
             return (
                     <Card 
                     /* PROPS-propiedades de la tarjeta, estas seran dinamicas */  
-                        key={producto.id}
+                        id={producto.id}
                         nombre={producto.nombre}
                         descripcion={producto.descripcion}
                         imagen={producto.imagen}
                         unidadesDisponibles={producto.unidades_disponibles}
                         precio={producto.precio}
+                        onChange={props.onChange}
+                
                     />
                     )
                 })}        

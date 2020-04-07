@@ -1,12 +1,20 @@
-import React from 'react'
+import React, { Component } from 'react'
 
-// eslint-disable-next-line no-unused-vars
-import estilos from './estilos/Card.css'
  
-function BtnAgregarAlCarrito(){
-  return (
-    <button className="btn">Agregar al carrito</button>
-  )
+class BtnAgregarAlCarrito extends Component{ 
+/*   state=this.props  */ 
 
+    render(){
+    
+      return(
+        
+        <div>      
+          <button onClick={this.props.onChange} className="btn" value={this.props.id}        
+         
+          >Agregar al carrito</button>
+
+         </div>
+      )
+    }  
 }
 export default BtnAgregarAlCarrito

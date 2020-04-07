@@ -1,14 +1,23 @@
 import React from 'react'
 import { Component } from 'react'
+// eslint-disable-next-line no-unused-vars
 import estilos from './estilos/Btn.css'
 import { Link } from 'react-router-dom'
  
-function BtnCarrito(){
-  return (
-    <Link to='/producto/Carrito'>
-      <button className='button'>My carrito</button>
-      </Link>
-  )
-
+class BtnCarrito extends Component{
+  render(){
+    return (
+    <Link to={
+              {
+                pathname:'/producto/Carrito',
+                carrito:this.props.carrito
+               }     
+             }       
+    >
+            <button className='button'>My carrito Total { this.props.totalitems}</button>
+            
+    </Link>
+    )
+  }
 }
 export default BtnCarrito

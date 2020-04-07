@@ -14,6 +14,7 @@ function App(){
   return (
   <BrowserRouter>
       <Switch>{/* switch especifica 404 si no encuentra nada */}
+          <Route exact path="/" component={Producto}></Route> 
           <Route exact path="/producto" component={Producto}></Route> 
           <Route exact path="/producto/Carrito" component={Carrito}></Route>          
           <Route exact path="/producto/AdministrarProductos" component={AdministrarProductos}></Route>

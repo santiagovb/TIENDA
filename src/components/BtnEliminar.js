@@ -7,48 +7,33 @@ import { confirmAlert } from 'react-confirm-alert'; // Import
 import 'react-confirm-alert/src/react-confirm-alert.css'; // Import css
 
 
+class BtnEliminar extends Component {
 
-class BtnEliminar extends Component{
+  handleClick = () => {
+    confirmAlert({
+      title: 'Cuidado!!!',
+      message: 'Realmente deseas eliminar este producto.',
+      buttons: [
+        {
+          label: 'Si',
+          onClick: () => {
+            axios.delete(`http://localhost:3006/productos/${this.props.id}`)
+              .then((res) => alert(res.data))
+              .catch(error => alert(error))
+          }
+        },
+        {
+          label: 'No',
+        }
+      ]
+    });
+  };
 
-    handleClick = () => {
-        confirmAlert({
-          title: 'Cuidado!!!',
-          message: 'Realmente deseas eliminar este producto.',
-          buttons: [
-            {
-              label: 'Si',
-              onClick: () => {
-                axios.delete(`http://localhost:3006/productos/${this.props.id}`)
-                .then((res)=>alert(res.data))
-                .catch(error=>alert(error)) 
-              }
-            },
-            {
-              label: 'No',              
-            }
-          ]
-        });
-      };
-    
-/*     handleClick = () => { 
-        axios.delete(`http://localhost:3006/productos/${this.props.id}`)
-        .then((res)=>alert(res.data))
-        .catch(error=>alert(error)) 
-     } */
-
-  
-     
-
-    render(){
-      
-        return (
-        <button onClick={this.handleClick} className="button" type="button">Eliminar</button>   
-            
-        )
-        
-    }
-   
- 
+  render() {
+    return (
+      <button onClick={this.handleClick} className="button" type="button">Eliminar</button>
+    )
+  }
 }
 
 
