@@ -19,7 +19,7 @@ componentDidMount(){
     render(){
         return(
             <div>
-                <div><p>{JSON.stringify(this.state.carrito)}</p></div>
+                
                 
                 <ListaCarrito
                 productos={this.state.database}  
