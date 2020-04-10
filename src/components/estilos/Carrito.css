@@ -1,0 +1,9 @@
+.container{
+    width: 100%; overflow: hidden;
+}
+.fixed{
+    width: 55%; float: left;
+}
+.flex-item{
+    margin-left: 45%;
+}

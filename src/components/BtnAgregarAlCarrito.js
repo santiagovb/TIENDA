@@ -9,7 +9,7 @@ class BtnAgregarAlCarrito extends Component{
       return(
         
         <div>      
-          <button onClick={this.props.onChange} className="btn" value={this.props.id}        
+          <button onClick={this.props.onChange} className="btn" value={this.props.id} name={this.props.precio}     
          
           >Agregar al carrito</button>
 

@@ -19,6 +19,7 @@ class Card extends Component{
                   <h3 className="price">$ {precio}</h3>{/* precio */}               
                  <BtnAgregarAlCarrito
                     id={id}
+                    precio={precio}
                     onChange={onChange}
                  /> 
                 </div>

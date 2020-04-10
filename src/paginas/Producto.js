@@ -9,11 +9,11 @@ import BtnAdministrarProductos from '../components/BtnAdministrarProductos'
 class Producto extends Component {
     state = {
         database: [],
-        incremento: 1,
         totalitems:0,
-        carrito: {}
-    }
+        totalcompra:0,
+        carrito: {},
 
+    }
 
     async componentDidMount() {
         await this.fetchProductos()
@@ -24,78 +24,48 @@ class Producto extends Component {
         this.setState({ database })
     }
 
-
     handlechange = (e) => {
-
-        let { incremento, carrito,totalitems } = this.state
-
-        Object.keys(carrito).includes(e.target.value)
-            ?
-            this.setState({
-                carrito: {
-                    ...this.state.carrito,
-                    [e.target.value]: carrito[e.target.value] + incremento,
-                 },
-                 totalitems:totalitems+1
-            })
-            :
-            this.setState({
-                carrito: {
-                    ...this.state.carrito,
-                    [e.target.value]: incremento,
-                    
-                },
-                totalitems:totalitems+1
-            })
-        }
-
-   /*  handlechange = (e) => {
-
-        let { incremento, carrito } = this.state
-     
-        console.log(carrito)
-
-        if (!Object.keys(this.state.carrito).length) {
-            this.setState({
-                carrito: {                    
-                    [e.target.value]: incremento
-                }
-            }
-            )   
-        } else{
+        let { carrito,totalitems,totalcompra } = this.state
+        
             if(Object.keys(carrito).includes(e.target.value)){
                 this.setState({
                     carrito: {
                         ...this.state.carrito,
-                        [e.target.value]: carrito[e.target.value]+incremento
-                    }
+                        [e.target.value]: carrito[e.target.value]+1
+                    },
+                    totalitems:totalitems+1,
+                    totalcompra:totalcompra+Number(e.target.name)
+                    
                 })
             }else{
 
                 this.setState({
                     carrito:{
                     ...this.state.carrito,
-                    [e.target.value]:incremento
-                }
+                    [e.target.value]:1
+                },
+                totalitems:totalitems+1,
+                totalcompra:totalcompra+Number(e.target.name)
                 })
             }
         }
-       
-
-    } */
 
     render() {
+        let {carrito,totalitems,database,totalcompra}=this.state
         return (
+            
             <div>
                 <BtnIrATienda />
                 <BtnCarrito
-                    carrito={this.state.carrito}
-                    totalitems={this.state.totalitems}
+                    database={database}
+                    carrito={carrito}
+                    totalitems={totalitems}
+                    totalcompra={totalcompra}
                     
                 />
                 <BtnAdministrarProductos />
                 <ListadeProductos
-                    productos={this.state.database}
+                    productos={database}
                     onChange={this.handlechange}
                 />
             </div>

@@ -9,8 +9,11 @@ let preciototal=0
             // eslint-disable-next-line array-callback-return
             props.productos.map((producto)=>{//map itera los datos del estado y los devuelve en una card
                 let cantidad=props.carrito[producto.id] 
+                
                 if (cantidad){
+                    let totalitem=cantidad*producto.precio
                     preciototal+=producto.precio*cantidad
+
 
                     return (
                         <CardCarrito
@@ -20,6 +23,8 @@ let preciototal=0
                         precio={producto.precio}
                         id={producto.id}
                         cantidad={cantidad}
+                        totalitem={totalitem}
+                        
                         />
 
                         )

@@ -1,33 +1,38 @@
 import React, { Component } from 'react'
-import axios from 'axios'
 import ListaCarrito from '../components/ListaCarrito'
+import BtnPagar from '../components/BtnPagar'
+import BtnIrATienda from '../components/BtnIrATienda'
+// eslint-disable-next-line no-unused-vars
+import estilos from '../components/estilos/Carrito.css'
 
-class Carrito extends Component{
- state={
-     database:[],
-     carrito:this.props.location.carrito
- }
+class Carrito extends Component {
+    state = {
+        carrito: this.props.location.carrito,
+        database: this.props.location.database,
+        totalitems:this.props.location.totalitems
 
-componentDidMount(){
-     axios.get('http://localhost:3006/productos')
-     .then((res)=>{      
-        this.setState({database:res.data})    
-    })
-     .catch((error)=>{alert(error)})     
-     
-}
-    render(){
-        return(
-            <div>
+    }
+
+    render() {
+        let { database, carrito, totalitems} = this.state
+        return (
+
+            <div className="container">
+                <div className="fixed" >
+                <BtnIrATienda></BtnIrATienda>
                 
-                
-                <ListaCarrito
-                productos={this.state.database}  
-                carrito={this.state.carrito} 
-                >
-                </ListaCarrito>
-                
-                
+                    <ListaCarrito
+                        productos={database}
+                        carrito={carrito}
+                    ></ListaCarrito>
+                </div>
+                <div className="flex-item">
+
+                    <BtnPagar></BtnPagar>
+                    <div>total items {totalitems}</div>
+                    <div>Valor total de tu compra </div>
+                    <div></div>
+                </div>
             </div>
         )
     }
