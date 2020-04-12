@@ -10,8 +10,8 @@ class BtnCarrito extends Component{
     <Link to={
               {
                 pathname:'/producto/Carrito',
-                carrito:this.props.carrito,
                 database:this.props.database,
+                carrito:this.props.carrito,                
                 totalitems:this.props.totalitems,
                 totalcompra:this.props.totalcompra
                }     

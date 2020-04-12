@@ -2,14 +2,16 @@ import React, { Component } from 'react'
 
  
 class BtnAgregarAlCarrito extends Component{ 
-/*   state=this.props  */ 
-
+state={
+        id:this.props.id,
+        precio:this.props.precio
+      }
     render(){
-    
-      return(
-        
-        <div>      
-          <button onClick={this.props.onChange} className="btn" value={this.props.id} name={this.props.precio}     
+      let state=JSON.stringify(this.state)
+      return(        
+        <div>   
+         
+          <button onClick={this.props.onChange} className="btn" value={state} //value=string
          
           >Agregar al carrito</button>
 

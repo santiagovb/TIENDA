@@ -11,10 +11,7 @@ let preciototal=0
                 let cantidad=props.carrito[producto.id] 
                 
                 if (cantidad){
-                    let totalitem=cantidad*producto.precio
-                    preciototal+=producto.precio*cantidad
-
-
+                    let totalitem=(cantidad*producto.precio).toLocaleString('es-CO')
                     return (
                         <CardCarrito
                         /* PROPS-propiedades de la tarjeta, estas seran dinamicas */  
@@ -31,7 +28,7 @@ let preciototal=0
                 }
             })
            
-            }   <div>precio total $ {preciototal.toString()}</div>      
+            }
         </div>
         )
     }

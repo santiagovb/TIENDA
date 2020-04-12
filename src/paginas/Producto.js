@@ -9,10 +9,9 @@ import BtnAdministrarProductos from '../components/BtnAdministrarProductos'
 class Producto extends Component {
     state = {
         database: [],
-        totalitems:0,
-        totalcompra:0,
         carrito: {},
-
+        totalitems:0,
+        totalcompra:0
     }
 
     async componentDidMount() {
@@ -24,34 +23,43 @@ class Producto extends Component {
         this.setState({ database })
     }
 
-    handlechange = (e) => {
-        let { carrito,totalitems,totalcompra } = this.state
+    handlechange = (e) => {      
+        let {carrito,totalitems,totalcompra}=this.state  
+        let eventval = JSON.parse(e.target.value)
+        let id = eventval.id.toString() 
+        let precio=eventval.precio  
         
-            if(Object.keys(carrito).includes(e.target.value)){
-                this.setState({
-                    carrito: {
-                        ...this.state.carrito,
-                        [e.target.value]: carrito[e.target.value]+1
-                    },
-                    totalitems:totalitems+1,
-                    totalcompra:totalcompra+Number(e.target.name)
-                    
-                })
-            }else{
-
-                this.setState({
-                    carrito:{
-                    ...this.state.carrito,
-                    [e.target.value]:1
+        if (!Object.keys(carrito).includes(id)) {
+            console.log('in')
+            console.log(id)
+            this.setState({
+                carrito:{
+                    ...carrito,
+                    [id]:1
                 },
                 totalitems:totalitems+1,
-                totalcompra:totalcompra+Number(e.target.name)
-                })
-            }
+                totalcompra: totalcompra+Number(precio)
+            })
+            
+        }else{
+            console.log(carrito[id])
+            this.setState({
+                    carrito:{    
+                    ...carrito,
+                    [id]:carrito[id]+1
+                },
+                totalitems:totalitems+1,
+                totalcompra: totalcompra+Number(precio) 
+            })
+        }
+        
+        
+      
+ 
         }
 
     render() {
-        let {carrito,totalitems,database,totalcompra}=this.state
+        let {carrito,totalitems,database, totalcompra}=this.state
         return (
             
             <div>
@@ -60,8 +68,7 @@ class Producto extends Component {
                     database={database}
                     carrito={carrito}
                     totalitems={totalitems}
-                    totalcompra={totalcompra}
-                    
+                    totalcompra={totalcompra}                    
                 />
                 <BtnAdministrarProductos />
                 <ListadeProductos
