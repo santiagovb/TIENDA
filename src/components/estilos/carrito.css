@@ -1,15 +1,23 @@
-.contenedor{
-    width: 100%;
-    display: flex;
-    margin-right: 20px;
-}
-.fixed{
-    width: 55%;
-}
-.flex-item{
-    width: 100%;
-    margin: 70px;
-    border:1px solid rgb(172, 162, 162);
-    flex-grow: 1;
-}
+.contcarrito{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
   
+
+}
+ 
+.elemento1{
+  width: 52%;
+  margin-left:5px;
+  /* border:1px solid rgb(172, 162, 162); */
+  
+}
+
+.elemento2{
+  width: 45%;
+  margin-left:10px;
+  /* border:1px solid rgb(172, 162, 162); */
+  
+}
+

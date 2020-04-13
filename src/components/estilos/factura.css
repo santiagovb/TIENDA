@@ -1,34 +1,36 @@
-.contenedor{
+.contentfactura{
   width: 99%;
   background: rgb(255, 255, 255);
-  padding: 10px 0px 5px 5px;/* elementos internos */
+  padding: 10px;/* elementos internos */
   /* border:1px solid rgb(172, 162, 162); */
   margin-bottom: 5px;/* espacio entre otros elementos */ 
   margin-top: 5px; 
   margin-left: 5px;
   display: flex;
-  flex-flow: row wrap;/* resume flex-direction y  flex-wrap */
+  flex-flow: column ;/* resume flex-direction y  flex-wrap */
   justify-content: start;/* start, end, center, space arround, space between */
+  align-items: center;
   align-content: center;
 }
 
-.elementoArriba{
-  border: 1px solid #dddddd;
-  text-align: center; 
-  padding: 8px;
-  margin:0px 0px 0px 5px;
-  width: 150px;
-  height: 30px; 
-  background-color: #dddddd;
-}
- 
-.elemento{
+
+.elementofactura{
   border: 1px solid #dddddd;
   text-align: center;
-  padding: 8px;
-  margin:0px 0px 0px 5px;  
-  width: 150px;
+  padding: 5px;
+  margin:0px 0px 0px 0px;  
+  width: 98%;
   height: 80px;
   background-color: #ffffff;
+}
+.imagen{
+  max-width: 4em;
+ max-height: 4em;
+}
+.fondogris{
+  background-color: #dddddd;
+}
+.fondomenosgris{
+  background-color: #ececec;
 }
 
