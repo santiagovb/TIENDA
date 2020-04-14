@@ -21,10 +21,14 @@ app.listen(port, () => {
   })
 
 //adicionando los metodos  
+/*
+app.get('/productos', consultas.getProducts)
+app.get('/productos/:id', consultas.getProductById)
+app.post('/productos', consultas.createProduct)
+app.put('/productos/:id', consultas.updateProduct)
+app.delete('/productos/:id', consultas.deleteProductById)
+*/
 
-/* 1 */app.get('/productos', consultas.getProducts)
-/* 2 */app.get('/productos/:id', consultas.getProductById)
-/* 3 */app.post('/productos', consultas.createProduct)
-/* 4 */app.put('/productos/:id', consultas.updateProduct)
-/* 5 */app.delete('/productos/:id', consultas.deleteProductById)
+// -------- Users ----------
+/* 6 */ app.get('/users', consultas.getUsers)
 

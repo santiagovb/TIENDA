@@ -4,7 +4,7 @@ const pool = new Pool({
   user: 'postgres',
   host: 'localhost',
   database: 'db_user',
-  password: 'personal',
+  password: 'ingesistem18',
   port: 5432,
 })
 
@@ -82,11 +82,28 @@ const createProduct = (request, response) => {
     })
   }
 
+
+
+
+//------------------------------------ Users----------------------------------------------------------------
+
+
+  const getUsers = (request, response) => {
+    pool.query('SELECT * FROM users;', (error, results) => {
+      if (error) {
+        throw error
+      }
+      response.status(200).json(results.rows)     
+    })
+  }
+
 //importar el modulo
   module.exports = {
     getProducts,
     getProductById,
     createProduct,
     deleteProductById,
-    updateProduct  
+    updateProduct,
+    //Users  
+    getUsers
   }

@@ -1,8 +1,8 @@
 [{"id":11,"nombre":"cam","area":"arq.empresarial"}]
 
-curl -X GET \
+/*curl -X GET \
   'http://127.0.0.1:3006/users/11?=' \
-  -H 'Accept: */*' \
+  -H 'Accept: */ /*' \
   -H 'Accept-Encoding: gzip, deflate' \
   -H 'Cache-Control: no-cache' \
   -H 'Connection: keep-alive' \
