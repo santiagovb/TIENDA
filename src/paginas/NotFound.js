@@ -1,13 +1,11 @@
 import React from 'react'
+// eslint-disable-next-line no-unused-vars
 import estilos from '../components/estilos/NotFound.css'
 
-const NotFound=()=>{
+const NotFound = () => {
+        return (
 
-    return(  
-            
-                <img className="imagen" src="https://static.vecteezy.com/system/resources/previews/000/362/681/non_2x/vector-website-error-404-page-not-found.jpg" alt="no se encontro la pagina"/>
-               
+                <img className="imagen" src="https://static.vecteezy.com/system/resources/previews/000/362/681/non_2x/vector-website-error-404-page-not-found.jpg" alt="no se encontro la pagina" />
         )
-    
 }
 export default NotFound

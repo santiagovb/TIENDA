@@ -8,7 +8,6 @@ import 'react-confirm-alert/src/react-confirm-alert.css'; // Import css
 
 
 class BtnEliminar extends Component {
-
   handleClick = () => {
     confirmAlert({
       title: 'Cuidado!!!',

@@ -5,9 +5,6 @@ import BtnCarrito from '../components/BtnCarrito'
 import BtnAdministrarProductos from '../components/BtnAdministrarProductos'
 import Barramenu from '../components/estilos/Barramenu.css'
 
-
-
-
 class Producto extends Component {
     state = {
         database: [],
@@ -30,7 +27,7 @@ class Producto extends Component {
         let precio = eventval.precio
 
         if (!Object.keys(carrito).includes(id)) {
-            
+
             this.setState({
                 carrito: {
                     ...carrito,
@@ -41,7 +38,7 @@ class Producto extends Component {
             })
 
         } else {
-           
+
             this.setState({
                 carrito: {
                     ...carrito,

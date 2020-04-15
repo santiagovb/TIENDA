@@ -15,14 +15,14 @@ class NuevoProducto extends React.Component {
 
     handleSubmit = (e) => {
         e.preventDefault()
-        console.log(JSON.stringify(this.state) ) 
-               
-      
-        axios.post('http://localhost:3006/productos',this.state)
-        .then(resultado=>alert(resultado.data))
-        .catch(error=>alert((error.data))
-    )
- }
+        console.log(JSON.stringify(this.state))
+
+
+        axios.post('http://localhost:3006/productos', this.state)
+            .then(resultado => alert(resultado.data))
+            .catch(error => alert((error.data))
+            )
+    }
     render() {
         return (
             <div>

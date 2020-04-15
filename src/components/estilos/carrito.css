@@ -9,16 +9,12 @@
   width: 52%;
   margin-left:5px;
   /* border:1px solid rgb(172, 162, 162); */
-  
 }
-
 .elemento2{
   width: 45%;
   margin-left:10px;
   display: flex;
   justify-content: center;
-
   /* border:1px solid rgb(172, 162, 162); */
-  
 }
 

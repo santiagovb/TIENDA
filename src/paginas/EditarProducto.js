@@ -14,18 +14,16 @@ class EditarProducto extends React.Component {
 
             {
                 [e.target.name]: e.target.value
-        
+
             }
         )
-        
     }
-
     handleSubmit = (e) => {
         e.preventDefault()
-        axios.put(`http://localhost:3006/productos/${this.state.id}`,this.state)
-        .then(res=>alert(res.data))
-        .catch(error=>alert(error))
-        
+        axios.put(`http://localhost:3006/productos/${this.state.id}`, this.state)
+            .then(res => alert(res.data))
+            .catch(error => alert(error))
+
     }
     render() {
         return (
