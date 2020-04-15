@@ -30,8 +30,7 @@ class Producto extends Component {
         let precio = eventval.precio
 
         if (!Object.keys(carrito).includes(id)) {
-            console.log('in')
-            console.log(id)
+            
             this.setState({
                 carrito: {
                     ...carrito,
@@ -42,7 +41,7 @@ class Producto extends Component {
             })
 
         } else {
-            console.log(carrito[id])
+           
             this.setState({
                 carrito: {
                     ...carrito,

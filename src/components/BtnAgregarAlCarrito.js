@@ -11,7 +11,7 @@ state={
       return(        
         <div>   
          
-          <button onClick={this.props.onChange} className="btn" value={state} //value=string
+          <button onClick={this.props.onChange} className="btn" value={state} 
          
           >Agregar al carrito</button>
 

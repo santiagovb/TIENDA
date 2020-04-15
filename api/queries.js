@@ -8,7 +8,6 @@ const pool = new Pool({
   port: 5432,
 })
 
- //--------------------------------------------------
 //Obtener todos los productos
 
 const getProducts = (request, response) => {
@@ -20,9 +19,7 @@ const getProducts = (request, response) => {
     })
   }
 
-  
- //--------------------------------------------------
- //obtener un solo productos
+ //obtener un producto por su id
 
   const getProductById = (request, response) => {
     const id = parseInt(request.params.id)
@@ -35,11 +32,7 @@ const getProducts = (request, response) => {
       response.json(results.rows)     
     })
   }
-  
- 
-  
 
-//----------------------------------------------------------------------
 //crear un nuevo producto
 const createProduct = (request, response) => {
     const { nombre, descripcion,unidades_disponibles,precio,imagen } = request.body
@@ -53,6 +46,19 @@ const createProduct = (request, response) => {
       response.send('Producto creado')
     })
   }
+
+//eliminar un producto por su id
+  const deleteProductById = (request, response) => {
+    const id = parseInt(request.params.id)
+  
+    pool.query('DELETE  FROM producto WHERE id = $1', [id], (error, results) => {
+      if (error) {
+        throw error
+      }
+      response.status(200).send(`Producto: ${id} borrado`)    
+    })
+  }
+
 //actualizar un producto
 
   const updateProduct = (request, response) => {
@@ -71,16 +77,24 @@ const createProduct = (request, response) => {
     )
   }
 
-  const deleteProductById = (request, response) => {
+  //descontar unidades por id de producto
+  const discountUnitsById = (request, response) => {
     const id = parseInt(request.params.id)
+    const {unidades_disponibles} = request.body
   
-    pool.query('DELETE  FROM producto WHERE id = $1', [id], (error, results) => {
-      if (error) {
-        throw error
+    pool.query(
+      'UPDATE producto SET unidades_disponibles = $1 WHERE id = $2', 
+      [unidades_disponibles,id],
+      (error, results) => {
+        if (error) {
+          throw error
+        }
+        response.status(200).send(`Produco ${id} descontado `)
       }
-      response.status(200).send(`Producto: ${id} borrado`)    
-    })
+    )
   }
+
+  
 
 //importar el modulo
   module.exports = {
@@ -88,5 +102,7 @@ const createProduct = (request, response) => {
     getProductById,
     createProduct,
     deleteProductById,
-    updateProduct  
+    updateProduct,
+    discountUnitsById 
+
   }

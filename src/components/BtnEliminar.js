@@ -26,15 +26,12 @@ class BtnEliminar extends Component {
           label: 'No',
         }
       ]
-    });
-  };
-
+    })
+  }
   render() {
     return (
       <button onClick={this.handleClick} className="button" type="button">Eliminar</button>
     )
   }
 }
-
-
 export default BtnEliminar

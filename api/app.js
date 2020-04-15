@@ -27,4 +27,5 @@ app.listen(port, () => {
 /* 3 */app.post('/productos', consultas.createProduct)
 /* 4 */app.put('/productos/:id', consultas.updateProduct)
 /* 5 */app.delete('/productos/:id', consultas.deleteProductById)
+/* 6 */app.put('/discountUnitsById/:id', consultas.discountUnitsById)
 
